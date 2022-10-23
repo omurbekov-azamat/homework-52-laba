@@ -1,4 +1,5 @@
 import Card from "./Card";
+import card from "./Card";
 
 class CardDeck {
   public arr: Card[] = [];
@@ -14,21 +15,20 @@ class CardDeck {
     }
   }
 
-  getCard(ammount:number){
-      let newCard: Card[] = [];
-
-      for (let i=0; i < ammount; i++) {
+  getCard(){
         let random =  this.arr[Math.floor(Math.random()*this.arr.length)]
         let index = this.arr.indexOf(random);
         this.arr.splice(index, 1)
-        newCard.push(random)
-
-      }
-    return newCard
+        return random
   }
 
   getCards(howMany:number){
-    return this.getCard(howMany);
+    let cards: card[] = [];
+    for (let i = 0; i < howMany; i++) {
+      cards.push(this.getCard());
+    }
+    console.log(this.arr);
+    return cards;
   }
 }
 
