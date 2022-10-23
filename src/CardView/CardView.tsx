@@ -6,6 +6,7 @@ interface CardViewProps {
 }
 
 const CardView: React.FC<CardViewProps> = (props) => {
+
   const changeClass = (rank: string, suit: string) => {
     let rankChange;
     let suitChange;
@@ -34,10 +35,8 @@ const CardView: React.FC<CardViewProps> = (props) => {
   return (
     <div className="playingCards faceImages">
       <span className={changeClass(props.rank, props.suit)}>
-
     <span className="rank">{props.rank}</span>
     <span className="suit">{props.suit}</span>
-
     </span>
     </div>
   );
